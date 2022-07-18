@@ -26,6 +26,8 @@ Tag.belongsToMany(Product, {
   foreignKey: 'tag_id'
 })
 
+//.belongsto??? check
+
 // Products belongsTo Category
 
 // Categories have many Products
