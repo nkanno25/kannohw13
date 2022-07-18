@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
@@ -33,7 +34,7 @@ router.get('/:id', (req, res) => {
   })
   .then(resonse => {
     if(!response) {
-      res.json({ message: "No category found with this id" })
+      res.json({ message: "no category with this id" })
       return;
     }
     res.json(resonse);
@@ -68,7 +69,7 @@ router.put('/:id', (req, res) => {
         id: req.params.id
       }
     })
-  .then(dbUpdatedData => res.json(dbUpdatedData))
+  .then(response => res.json(response))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -82,12 +83,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(dbResData => {
-    if (!dbResData) {
-      res.json({ message: 'No category with this id' });
+  .then(response => {
+    if (!response) {
+      res.json({ message: 'no category with requested id' });
       return; 
     }
-    res.json({message: 'Successfully deleted'})
+    res.json({message: 'deleted'})
   })
   .catch(err => {
     console.log(err);

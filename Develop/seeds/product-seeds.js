@@ -14,13 +14,13 @@ const productData = [
     category_id: 5,
   },
   {
-    product_name: 'Branded Baseball Hat',
+    product_name: 'Baseball Hat',
     price: 22.99,
     stock: 12,
     category_id: 4,
   },
   {
-    product_name: 'Top 40 Music Compilation Vinyl Record',
+    product_name: 'Music Compilation Record',
     price: 12.99,
     stock: 50,
     category_id: 3,
